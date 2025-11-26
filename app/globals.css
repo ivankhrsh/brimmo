@@ -1,26 +1,69 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-border: var(--border);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+  --background: #ffffff;
+  --foreground: #071429;
+  --card: #ffffff;
+  --card-foreground: #071429;
+  --primary: #0e64ee;
+  --secondary: #dee3ef;
+  --muted-foreground: #778090;
+  --border: #dee3ef;
+  --ring: #0e64ee;
+}
+
+.dark {
+  --background: #071429;
+  --foreground: #f9fafb;
+  --card: #020617;
+  --card-foreground: #f9fafb;
+  --primary: #0e64ee;
+  --secondary: #111827;
+  --muted-foreground: #9ca3af;
+  --border: #1f2937;
+  --ring: #0e64ee;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-open-sans {
+    font-family: var(--font-open-sans);
+  }
+
+  .font-fixel-display-semibold {
+    font-family: var(--font-fixel-display-semibold);
+    font-weight: 600;
+  }
 }
+
+

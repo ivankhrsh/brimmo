@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${fixelDisplaySemibold.variable} bg-[#E7EDF8] antialiased`}
+        className={`${openSans.variable} ${fixelDisplaySemibold.variable} bg-page antialiased`}
       >
         <div className="flex min-h-screen">
           <Navbar />

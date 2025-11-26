@@ -21,7 +21,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-row items-center gap-6 font-medium">
-            <button className="text-primary hover:text-primary/90 flex cursor-pointer items-center gap-2 text-sm transition-all duration-300 md:text-base">
+            <button className="text-primary hover:text-primary/90 hover:bg-white flex cursor-pointer items-center gap-2 rounded-full px-[20px] py-[11px] text-sm transition-all duration-300 md:text-base">
               <Eye />
               View Forecast Accuracy
             </button>
